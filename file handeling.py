@@ -21,7 +21,7 @@ global date_time
 global average
 list_20 = random.sample(range(1, 400), 20)
 date_time = ('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
-average = mean(list_20)
+average = 'Average:', mean(list_20)
 
 
 def use_write():
@@ -35,6 +35,16 @@ def use_read():
     with open("test.txt") as f:                       # reading everything from test.txt
         for line in f:                                # this can be modified to show specifics from the test.txt
             print(line)
+
+def restart():
+    # Asking the user if he want to end it here or want to go again
+    restart = input("Do you want to start again? if so type 'yes' else type 'no' ").lower()
+
+    if restart == "yes":
+        print('\n' * 80)
+        main()
+    else:
+        exit()
 
 
 # This is just the logic of the machine, my main function
@@ -52,15 +62,7 @@ def main():
     if input_user == "2":
         use_read()
 
-    # Asking the user if he want to end it here or want to go again
-    restart = input("Do you want to start again? if so type 'yes' else type 'no' ").lower()
-
-    if restart == "yes":
-        print('\n' * 80)
-        main()
-    else:
-        exit()
-
+    restart()
 
 if __name__ == '__main__':  # code to execute if called from command-line
     main()

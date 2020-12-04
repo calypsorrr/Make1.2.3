@@ -31,30 +31,25 @@ def upper_cases():
 
 
 # My function to generate digits as much as the user want to
-def characters():
+def digitals():
    global result_3
    user_3 = int(input("How many digits do you want in your password? "))
    digits = string.digits
    result_3 = ''.join(random.choice(digits) for i in range(user_3))
 
+def charaters():
+   global result_4
+   user_4 = int(input("How many charaters do you want in your password? "))
+   charaters_1 = string.punctuation
+   result_4 = ''.join(random.choice(charaters_1) for i in range(user_4))
 
 # A function to randomise the string i already have from the input of the user
 def random_string():
-   global  result_4
-   result_4 = ''.join(random.sample(result_1 + result_2 + result_3, len(result_1 + result_2 + result_3)))
+   global  result_5
+   result_5 = ''.join(random.sample(result_1 + result_2 + result_3 + result_4, len(result_1 + result_2 + result_3 +
+                                                                                   result_4)))
 
-
-# My main fucntion where all the other functions are
-def main():
-   lower_cases()
-   upper_cases()
-   characters()
-   random_string()
-
-   print(result_4)
-
-   print("\n")
-
+def restart():
    # Asking the user if he want to end it here or want to go again
    restart = input("Do you want to start again? if so type 'yes' else type 'no' ").lower()
    if restart == "yes":
@@ -63,6 +58,20 @@ def main():
    else:
       exit()
 
+
+# My main fucntion where all the other functions are
+def main():
+   lower_cases()
+   upper_cases()
+   digitals()
+   charaters()
+   random_string()
+
+   print(result_5)
+
+   print("\n")
+
+   restart()
 
 if __name__ == '__main__':  # code to execute if called from command-line
     main()
