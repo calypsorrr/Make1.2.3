@@ -9,24 +9,24 @@ __email__ = "bo.claes@student.kdg.be"
 __status__ = "Development"
 
 
-class liedje(object):
+class liedje(object):            # a class with a list named tekst
     def __init__(self, tekst):
         self.tekst = tekst
 
-    def zingen(self):
+    def zingen(self):            # this will put every sentence on its own line
         for x in self.tekst:
             print(x)
 
 
 
-def birthday():
+def birthday():              # birthday song
     global verjaardagslied
     verjaardagslied = liedje(["Happy birthday to you", "Happy birthday to you", "Happy birthday dear Stijn",
                           "Happy birthday to you", "Een fijne verjaardag voor jou", "Een fijne verjaardag voor jou",
                           "Een fijne verjaardag",  "fijne verjaardag", "Een fijne verjaardag voor jou!"])
     verjaardagslied.zingen()
 
-def chrismass():
+def chrismass():            # chrismass song
     kerstliedjes = liedje(["Have yourself a merry little Christmas", "Let your heart be light", "From now on",
                       "Our troubles will be out of sight", "Have yourself a merry little Christmas",
                       "Make the Yule-tide gay", "From now on", "Our troubles will be miles away",
@@ -48,6 +48,7 @@ def restart():
     else:
         exit()
 
+# main function
 def main():
     print("which song do you want to hear? ")
     print("\n")

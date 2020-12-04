@@ -11,6 +11,7 @@ __status__ = "Development"
 
 def use_x():
     global x
+    # try and except for detecting a error
     try:
         x = int(input("Give me a Number user "))  # Asking the user for a number
     except ValueError as err:
@@ -57,7 +58,7 @@ def use_divided():
     print("The result of the numbers that where divided is " + str(int(x) / int(y)))
 
 def restart():
-    # Asking the user if he want to end it here or want to go again
+    # Asking the user if he want to end it here or want to go again with different options
     print("\n")
     print("Do you want to continue with the same numbers or you want to put another in? ")
     print("1. change number 1")
